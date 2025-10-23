@@ -36,18 +36,32 @@
         "releaseYear" => 2011,
         "purchaseUrl" => "http://example.com"
       ]
-    ] ?>
+      ]; 
+    
+    function filterByAuthor($books) {
+      $filteredBooks = [];
+
+      forEach ($books as $book) {
+        if($book["author"] === "Andy Weir") {
+          $filteredBooks[] = $book;
+        }
+      }
+
+      return $filteredBooks;
+    }  
+
+    ?>
 
     
     <ul>
-      <?php forEach ($books as $book) : ?>
-        <?php  if ($book["author"] === "Andy Weir"):?>
+      <?php forEach (filterByAuthor($books) as $book) : ?>
+       
           <li>
           <a href="<?= $book["purchaseUrl"] ?>">
             <?= $book['name'] ?> (<?= $book['releaseYear'] ?>) - By <?= $book["author"] ?>
           </a>
           </li>
-        <?php endif ?>
+       
         <?php endforeach; ?>
     </ul>
   </body>
