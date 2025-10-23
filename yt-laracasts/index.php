@@ -17,13 +17,37 @@
   <body>
     <h1>Recommended Books</h1>
 
-    <?php $books = ["Do Androids Dream of Electric Sheep", "The Langoliers", "Hail Mary"] ?>
+    <?php $books = [
+      [
+        "name" => "Do Androids Dream of Electric Sheep",
+        "author" => "Philip K. Dick",
+        "releaseYear" => 1968,
+        "purchaseUrl" => "http://example.com"
+      ],
+      [
+        "name" => "Project Hail Mary",
+        "author" => "Andy Weir",
+        "releaseYear" => 2021,
+        "purchaseUrl" => "http://example.com"
+      ],
+      [
+        "name" => "The Martian",
+        "author" => "Andy Weir",
+        "releaseYear" => 2011,
+        "purchaseUrl" => "http://example.com"
+      ]
+    ] ?>
 
+    
     <ul>
-      <?php foreach ($books as $book) : ?> 
-        <li>
-          <?= $book ?>
-        </li>
+      <?php forEach ($books as $book) : ?>
+        <?php  if ($book["author"] === "Andy Weir"):?>
+          <li>
+          <a href="<?= $book["purchaseUrl"] ?>">
+            <?= $book['name'] ?> (<?= $book['releaseYear'] ?>) - By <?= $book["author"] ?>
+          </a>
+          </li>
+        <?php endif ?>
         <?php endforeach; ?>
     </ul>
   </body>
