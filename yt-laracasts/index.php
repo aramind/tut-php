@@ -5,15 +5,29 @@ require 'functions.php';
 
 // connect to our mySQL database
 
-$dsn = 'mysql:host=localhost;port=3306;dbname=yt_laracasts;charset=utf8mb4';
+class Database
+{
+    public $connection;
 
-$pdo = new PDO($dsn, 'root');
+    public function __construct()
+    {
+        $dsn = 'mysql:host=localhost;port=3306;dbname=yt_laracasts;charset=utf8mb4';
 
-$statement = $pdo->prepare("select * from posts");
-$statement->execute();
+        $this->connection = new PDO($dsn, 'root');
+    }
+    public function query($query)
+    {
 
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+        $statement = $this->connection->prepare($query);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+}
+
+$db = new Database();
+$posts = $db->query("select * from posts");
 foreach ($posts as $post) {
     echo "<li> {$post['title']} </li>";
 }
