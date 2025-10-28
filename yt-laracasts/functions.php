@@ -2,9 +2,9 @@
 
 function dd($value)
 {
-    echo "<pre>";
+    echo '<pre style="background:#111;color:#0f0;padding:10px;border-radius:5px;">';
     var_dump($value);
-    echo "<pre>";
+    echo "</pre>";
 
     die();
 }

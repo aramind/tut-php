@@ -2,8 +2,31 @@
 
 require 'functions.php';
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'])["path"];
 
-if ($uri === "tut-php/yt-laracasts/") {
-    require 'controllers/index.php';
+$routes = [
+    '/tut-php/yt-laracasts/' => 'controllers/index.php',
+    '/tut-php/yt-laracasts/about' => 'controllers/about.php',
+    '/tut-php/yt-laracasts/contact' => 'controllers/contact.php',
+
+];
+
+function routeToController($uri, $routes)
+{
+
+
+    if (array_key_exists($uri, $routes)) {
+        require $routes[$uri];
+    } else {
+        abort();
+    }
 }
+
+function abort($code = 404)
+{
+    http_response_code($code);
+
+    require "views/{$code}.php";
+}
+
+routeToController($uri, $routes);
