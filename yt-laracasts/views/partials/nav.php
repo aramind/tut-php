@@ -11,6 +11,7 @@
             <a href="/tut-php/yt-laracasts/" class="<?= urlIs("/tut-php/yt-laracasts/") ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Home</a>
             <a href="/tut-php/yt-laracasts/about" class=" <?= urlIs("/tut-php/yt-laracasts/about") ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
             <a href="/tut-php/yt-laracasts/contact" class="<?= urlIs("/tut-php/yt-laracasts/contact") ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
+            <a href="/tut-php/yt-laracasts/notes" class="<?= urlIs("/tut-php/yt-laracasts/notes") ? 'bg-gray-900 text-white' : 'text-gray-300' ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Notes</a>
           </div>
         </div>
       </div>
