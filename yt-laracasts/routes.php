@@ -6,5 +6,6 @@ return [
     '/tut-php/yt-laracasts/contact' => 'controllers/contact.php',
     '/tut-php/yt-laracasts/notes' => 'controllers/notes.php',
     '/tut-php/yt-laracasts/note' => 'controllers/note.php',
+    '/tut-php/yt-laracasts/notes/create' => 'controllers/note-create.php',
 
 ];
