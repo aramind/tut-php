@@ -7,14 +7,31 @@ $db = new Database($config['database']);
 
 $currentUserId = 1;
 
-$note = $db->query('select * from notes where id = :id', ['id' => $_GET["id"]])->findOrFail();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-// dd($note['user_id']);
-// dd($currentUserId);
+    $note = $db->query('select * from notes where id = :id', ['id' => $_GET["id"]])->findOrFail();
 
-authorize($note['user_id'] == $currentUserId);
+    // dd($note['user_id']);
+    // dd($currentUserId);
 
-view("notes/show.view.php", [
-    'heading' => "Note",
-    'note' => $note,
-]);
+    authorize($note['user_id'] == $currentUserId);
+
+    $db->query('delete from notes where id = :id', ['id' => $_POST['id']]);
+
+    header('location: /tut-php/yt-laracasts/notes');
+    exit();
+} else {
+
+
+    $note = $db->query('select * from notes where id = :id', ['id' => $_GET["id"]])->findOrFail();
+
+    // dd($note['user_id']);
+    // dd($currentUserId);
+
+    authorize($note['user_id'] == $currentUserId);
+
+    view("notes/show.view.php", [
+        'heading' => "Note",
+        'note' => $note,
+    ]);
+}
