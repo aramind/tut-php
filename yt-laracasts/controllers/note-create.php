@@ -6,6 +6,7 @@ require "Validator.php";
 
 $heading = "Create Note";
 
+
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     $errors = [];
