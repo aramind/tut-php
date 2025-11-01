@@ -2,7 +2,7 @@
 
 $config = require base_path('config.php');
 $db = new Database($config['database']);
-require base_path("Validator.php");
+require base_path("Core/Validator.php");
 
 $errors = [];
 
