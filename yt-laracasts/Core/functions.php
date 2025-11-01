@@ -1,5 +1,8 @@
 <?php
 
+use Core\Response;
+
+
 function dd($value)
 {
     echo '<pre style="background:#111;color:#0f0;padding:10px;border-radius:5px;">';
