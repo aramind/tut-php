@@ -1,11 +1,20 @@
 <?php
 
-return [
-    '/tut-php/yt-laracasts/' => 'controllers/index.php',
-    '/tut-php/yt-laracasts/about' => 'controllers/about.php',
-    '/tut-php/yt-laracasts/contact' => 'controllers/contact.php',
-    '/tut-php/yt-laracasts/notes' => 'controllers/notes/index.php',
-    '/tut-php/yt-laracasts/note' => 'controllers/notes/show.php',
-    '/tut-php/yt-laracasts/notes/create' => 'controllers/notes/create.php',
+// return [
+//     '/tut-php/yt-laracasts/' => 'controllers/index.php',
+//     '/tut-php/yt-laracasts/about' => 'controllers/about.php',
+//     '/tut-php/yt-laracasts/contact' => 'controllers/contact.php',
+//     '/tut-php/yt-laracasts/notes' => 'controllers/notes/index.php',
+//     '/tut-php/yt-laracasts/note' => 'controllers/notes/show.php',
+//     '/tut-php/yt-laracasts/notes/create' => 'controllers/notes/create.php',
 
-];
+// ];
+
+
+$router->get("/tut-php/yt-laracasts/", 'controllers/index.php');
+$router->get("/tut-php/yt-laracasts/about", 'controllers/about.php');
+$router->get("/tut-php/yt-laracasts/contact", 'controllers/contact.php');
+$router->get("/tut-php/yt-laracasts/notes", 'controllers/notes/index.php');
+$router->get("/tut-php/yt-laracasts/note", 'controllers/notes/show.php');
+$router->get("/tut-php/yt-laracasts/notes/create", 'controllers/notes/create.php');
+$router->post("/tut-php/yt-laracasts/notes/create", 'controllers/notes/create.php');
