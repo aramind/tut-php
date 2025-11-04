@@ -10,7 +10,7 @@
         <p> <?= htmlspecialchars($note['body']) ?></p>
 
         <footer class="mt-6">
-            <a href="/tut-php/yt-laracasts/note/edit" class="text-gray-500 border border-current px-4 py-1 rounded">Edit</a>
+            <a href="/tut-php/yt-laracasts/note/edit?id=<?= $note['id'] ?>" class="text-gray-500 border border-current px-4 py-1 rounded">Edit</a>
         </footer>
 
         <form class="mt-6" method="POST">
