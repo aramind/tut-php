@@ -7,7 +7,12 @@
         <p class="mb-6">
             <a href="/tut-php/yt-laracasts/notes" class="text-blue-500 underline">go back...</a>
         </p>
-        <p> <?= $note['body'] ?></p>
+        <p> <?= htmlspecialchars($note['body']) ?></p>
+
+        <footer class="mt-6">
+            <a href="/tut-php/yt-laracasts/note/edit" class="text-gray-500 border border-current px-4 py-1 rounded">Edit</a>
+        </footer>
+
         <form class="mt-6" method="POST">
             <input type="hidden" name="_method" value="DELETE" />
             <input type="hidden" name="id" value="<?= $note["id"] ?>" />
