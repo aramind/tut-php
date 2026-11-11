@@ -9,10 +9,17 @@
 
 <body>
   <h1>
-    <?php
-    $greeting = "Hello";
-    echo $greeting . " Worlds" ?>
+    Recommended books
   </h1>
+  <?php
+  $books = ["Do Androids Dream of Electric Shop", "The Langoliers", "Hail Mary"];
+  ?>
+
+  <ul>
+    <?php foreach ($books as $book): ?>
+      <li>Hello there, <?= $book ?></li>
+    <?php endforeach; ?>
+  </ul>
 </body>
 
 </html>
